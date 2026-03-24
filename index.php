@@ -17,32 +17,9 @@
 </head>
 <body>
   <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Logo da Lojinha </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Inicial</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Categorias.html">Categorias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="SubCategorias.html">Sub Categorias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">final</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>  
+  <?php require('menu.php');//unit uses unit?>
   </header>
- <main class="container-fluid"> 
+ <main class="container"> 
     <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -65,11 +42,11 @@
       <img src="carousel1/C3.webp" class="d-block w-100" alt="...">
     </div>
 
-      <div class="carousel-item active">
+      <div class="carousel-item">
       <img src="carousel1/C4.webp" class="d-block w-100" alt="...">
     </div>
 
-      <div class="carousel-item active">
+      <div class="carousel-item">
       <img src="carousel1/C5.webp" class="d-block w-100" alt="...">
     </div>
 
@@ -93,7 +70,7 @@
   <div class="card-body">
     <h5 class="card-title"><?php echo $titulo; ?> </h5>
     <p class="card-text"><?php echo $resumo; ?></p>
-    <p class="text-danger"> Valor: <b> R$ <?php echo $valor; ?></p>
+    <p class="text-danger"> Valor: <b> R$ <?php echo $valor; ?></b></p>
     <p class="text-primary">Estoque: <?php echo $quantidade; ?></p>
     <a href="#" class="btn btn-primary">Ver Produto</a>
   </div>
@@ -104,6 +81,6 @@
 
  </main>
 
- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ create table subcategorias
     prosubid int,
     proativo boolean default 1,
     constraint fkprosubid foreign key (prosubid)
-    references subcategorias (subid0)
+    references subcategorias (subid)
   );
 
   create table fotosproduto
@@ -42,4 +42,38 @@ create table subcategorias
     constraint fkfotproid foreign key (fotproid)
     references produtos (proid)
   );
+
+  Insert into categorias (catnome) values
+  ('Acessórios para Veículos'),
+  ('Agro'),
+  ('Alimentos e Bebidas'),
+  ('Pet Shop'),
+  ('Antiguidades e Coleções'),
+  ('Arte, Papelaria e Armarinho'),
+  ('Bebês'),
+  ('Beleza e Cuidado Pessoal'),
+  ('Brinquedos e Hobbies'),
+  ('Calçados, Roupas e Bolsas'),
+  ('Câmeras e Acessórios'),
+  ('Carros, Motos e Outros'),
+  ('Casa, Móveis e Decoração'),
+  ('Celulares e Telefones'),
+  ('Construção'),
+  ('Eletrodomésticos'),
+  ('Eletrônicos, Áudio e Vídeo'),
+  ('Esportes e Fitness'),
+  ('Ferramentas'),
+  ('Festas e Lembrancinhas'),
+  ('Games'),
+  ('Imóveis'),
+  ('Indústria e Comércio'),
+  ('Informática'),
+  ('Ingressos'),
+  ('Instrumentos Musicais'),
+  ('Joias e Relógios'),
+  ('Livros, Revistas e Comics'),
+  ('Música, Filmes e Seriados'),
+  ('Saúde'),
+  ('Serviços'),
+  ('Mais Categorias');
 
