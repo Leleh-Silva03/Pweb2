@@ -1,11 +1,5 @@
 <?php
-//mesma coisa que o uses do delphi ou lazarus (ALT+F11)
-require './controle/conexao.php';
 
-//FDQuery do Delphi ou ZQuery do Lazarus
-//Conectamos a Query
-$pdo = conexao::conectar();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "select * from categorias"; //Propriedade sql da query do Delphi / lazarus
 $prp = $pdo->prepare($sql); //Seria o princípio logico de preparação para o  execsql ou open da query no delphi/lazarus
 $prp ->execute(); //execsql ou open da query no delphi/lazarus
@@ -16,7 +10,7 @@ $prp ->execute(); //execsql ou open da query no delphi/lazarus
           <a class="navbar-brand" href="index.html">LogoDaLojinha</a>
           <button
             class="navbar-toggler"
-            type="button"
+            type="button"  
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
