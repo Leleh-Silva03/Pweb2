@@ -2,63 +2,62 @@
 //mesma coisa que o uses do delphi ou lazarus (ALT+F11)
 require './controle/conexao.php';
 
-//FDQuery do Delphi ou ZQuery do Lazarus
-//Conectamos a Query
+//semelhante ao connected do delphi (query)
 $pdo = conexao::conectar();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-$sqlpro = 
-"
-  select 
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sqlpro="
+select
 proid,
 pronome,
 prodescricao,
-provalorcusto, 
+provalorcusto,
 provalorvenda,
-proquantidade, 
+proquantidade,
 prosubid,
-subnome, 
+subnome,
 subcatid,
 catnome,
 proativo
+
 from 
-produtos
+
+produtos,
 subcategorias,
 categorias
 where
-prosubid = subid
+prosubid= subid
 and
-subcatid = catid
-
-";
-
-$prproduto = $pdo->prepare($sqlpro);
-$prproduto->execute();
-while ($dsproduto = $prproduto->fetch(PDO::FETCH_ASSOC)){
-  echo $dsproduto['pronome'].'<br>';
+subcatid= catid
+"; 
+$prppro = $pdo->prepare($sqlpro);
+$prppro->execute();
+while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)) {
+  echo $dspro['pronome'].'<br>';
 }
+
 ?>
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> O Lojinha</title>
+    <title>O lojinha</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <header>
-  <?php require('menu.php');//unit uses unit?>
-  </header>
- <main class="container"> 
+    <header>
+   <?php require('menu.php');//unit uses unit?>
+    </header>  
+<main class="container">
     <div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    
-  </div>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="carousel1/C1.webp" class="d-block w-100" alt="...">
@@ -80,37 +79,33 @@ while ($dsproduto = $prproduto->fetch(PDO::FETCH_ASSOC)){
       <img src="carousel1/C5.webp" class="d-block w-100" alt="...">
     </div>
 
-      
-
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-  <div class="row">
-    <?php while($i<=10) { ?>
-    <div class="col mt-2">
-    <div class="card" style="width: 18rem;">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="row">
+        <?php while ($i<=10){ ?>
+        <div class="col mt-2">
+        <div class="card" style="width: 18rem;">
   <img src="<?php echo $imagem; ?>" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title"><?php echo $titulo; ?> </h5>
+    <h5 class="card-title"><?php echo$titulo; ?></h5>
     <p class="card-text"><?php echo $resumo; ?></p>
-    <p class="text-danger"> Valor: <b> R$ <?php echo $valor; ?></b></p>
+    <p class="text-danger">Valor:<b>R$ <?php echo $valor; ?></b></p>
     <p class="text-primary">Estoque: <?php echo $quantidade; ?></p>
     <a href="#" class="btn btn-primary">Ver Produto</a>
   </div>
 </div>
-    </div>
-    <?php $i++; } //$i=$i+1 ?>
-  </div>
-
- </main>
-
- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+        <?php $i++; }//$i=$i+1?>
+      </div>
+</main>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
 </body>
-</html>
+</html>   
