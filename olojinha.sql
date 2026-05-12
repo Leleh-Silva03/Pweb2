@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 05, 2026 at 03:18 PM
+-- Generation Time: May 12, 2026 at 03:37 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -70,6 +70,7 @@ INSERT INTO `categorias` (`catid`, `catnome`, `catativo`) VALUES
 (30, 'Saúde', 1),
 (31, 'Serviços', 1),
 (32, 'Mais Categorias', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +84,20 @@ CREATE TABLE `fotosproduto` (
   `fotproid` int DEFAULT NULL,
   `fotprincipal` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `fotosproduto`
+--
+
+INSERT INTO `fotosproduto` (`fotid`, `fotcaminho`, `fotdescricao`, `fotproid`, `fotprincipal`) VALUES
+(1, 'imgprodutos/1.png', '', 1, 1),
+(2, 'imgprodutos/2.png', '', 1, 1),
+(3, 'imgprodutos/3.png', '', 1, 1),
+(4, 'imgprodutos/4.png', '', 1, 1),
+(5, 'imgprodutos/5.png', '', 1, 1),
+(6, 'imgprodutos/6.png', '', 1, 1),
+(7, 'imgprodutos/7.png', '', 1, 1),
+(8, 'imgprodutos/8.png', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +202,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT for table `fotosproduto`
 --
 ALTER TABLE `fotosproduto`
-  MODIFY `fotid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `fotid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `produtos`
