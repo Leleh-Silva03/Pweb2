@@ -119,5 +119,14 @@ values
 INSERT INTO fotosproduto
 (fotcaminho, fotproid, fotprincipal )
 VALUES
-('midias_produtos/Racaogato.jpg','1','1');
-('midias_produtos/areia.jpg','','1');
+('midias_produtos/Racaogato.jpg','1','1'),
+('midias_produtos/areia.jpg','2','1'),
+('midias_produtos/racaocoelho.jpg','3','2'),
+('midias_produtos/download.webp','4','2'),
+('midias_produtos/base.webp','5','3'),
+('midias_produtos/batom.webp','6','3'),
+('midias_produtos/perfume.webp','7','4'),
+('midias_produtos/homem.webp','8','4');
+
+
+
