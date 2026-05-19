@@ -120,3 +120,4 @@ INSERT INTO fotosproduto
 (fotcaminho, fotproid, fotprincipal )
 VALUES
 ('midias_produtos/Racaogato.jpg','1','1');
+('midias_produtos/areia.jpg','','1');
