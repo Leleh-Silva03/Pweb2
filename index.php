@@ -52,7 +52,7 @@ $prppro->execute();
 </head>
 <body>
     <header>
-   <?php require('menu.php');//unit uses unit?>
+   <?php require('menu.php');//unit uses unit (tipo do Delphi)?>
     </header>  
 <main class="container">
     <div id="carouselExampleIndicators" class="carousel slide">
@@ -110,7 +110,7 @@ $prppro->execute();
   </div>
 </div>
         </div>
-        <?php  }?>
+        <?php  }?> 
       </div>
 </main>
  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
